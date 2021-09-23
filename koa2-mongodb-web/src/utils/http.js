@@ -1,27 +1,30 @@
 import axios from "axios";
 
+// 创建axios实例
 let instance = axios.create({
-  baseURL: "http://localhost:3000",
-  timeout: 5000,
+  baseURL: "http://localhost:3000", // 基本的路由
+  timeout: 5000, // 超时时长
 });
 
-//请求拦截
+// 请求拦截
 instance.interceptors.request.use(
   (config) => {
-    //请求拦截要处理的内容
+    // 请求拦截要处理的内容
     return config;
   },
+  // 请求失败的处理
   (err) => {
     console.error("请求失败", err);
   }
 );
 
-//响应拦截
+// 响应拦截
 instance.interceptors.response.use(
   (res) => {
-    //响应拦截要处理的内容
+    // 响应拦截要处理的内容
     return res;
   },
+  // 响应失败的处理
   (err) => {
     console.error("响应失败", err);
   }

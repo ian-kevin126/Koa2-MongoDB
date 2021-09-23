@@ -1,0 +1,7 @@
+.idea
+.cache
+/Koa2-MongoDB/node_modules
+/koa2-mongodb-web/node_modules
+dist
+.vscode
+.DS_Store

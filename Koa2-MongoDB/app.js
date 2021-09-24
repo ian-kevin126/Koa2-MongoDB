@@ -7,9 +7,11 @@ const bodyparser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const MongoConnect = require("./db");
 const cors = require("koa2-cors");
+const koajwt = require("koa-jwt");
 
 const index = require("./routes/index");
 const users = require("./routes/users");
+const upload = require("./routes/upload");
 
 // 连接数据库
 MongoConnect();
@@ -36,6 +38,15 @@ app.use(
   })
 );
 
+// jwt身份认证
+app.use(
+  koajwt({
+    secret: "KOA-MONGODB-JWT",
+  }).unless({
+    path: [/^\/users\/login/, /^\/users\/reg/],
+  })
+);
+
 // logger
 app.use(async (ctx, next) => {
   const start = new Date();
@@ -47,6 +58,7 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
+app.use(upload.routes(), upload.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {

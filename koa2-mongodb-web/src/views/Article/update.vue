@@ -1,11 +1,15 @@
 <template>
   <div>
-    修改文章
+      修改文章
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
-<style></style>
+<style>
+
+</style>

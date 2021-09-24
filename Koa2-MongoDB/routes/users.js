@@ -15,8 +15,8 @@ router.post("/login", login);
 // 用户注册
 router.post("/reg", reg);
 
-// 验证用户登录
-router.post("/verify", verify);
+//验证用户登录
+router.get("/verify", verify);
 
 // 修改用户密码
 router.post("/update/pwd", updatePwd);

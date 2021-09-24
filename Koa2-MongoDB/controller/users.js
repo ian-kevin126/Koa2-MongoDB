@@ -87,6 +87,9 @@ const reg = async (ctx) => {
     });
 };
 
+/**
+ * 验证用户登录
+ */
 const verify = async (ctx) => {
   let token = ctx.header.authorization;
   token = token.replace("Bearer ", "");
@@ -176,7 +179,7 @@ const updatePersonal = async (ctx) => {
     }
   )
     .then((rel) => {
-      if (rel.n > 0) {
+      if (rel.modifiedCount > 0) {
         ctx.body = {
           code: 200,
           msg: "资料已更新",
@@ -192,6 +195,7 @@ const updatePersonal = async (ctx) => {
       ctx.body = {
         code: 500,
         msg: "资料更新异常",
+        err,
       };
     });
 };

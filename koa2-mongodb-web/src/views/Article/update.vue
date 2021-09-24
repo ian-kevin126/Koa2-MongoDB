@@ -55,18 +55,18 @@ export default {
     });
   },
   mounted() {
-    //创建wangEditor实例
+    // 创建wangEditor实例
     this.editor = new Editor("#editor");
 
-    //配置上传图片的接口地址
+    // 配置上传图片的接口地址
     this.editor.config.uploadImgServer = `http://localhost:3000/upload/editor/img`;
     this.editor.config.uploadFileName = "editorFile";
     this.editor.config.uploadImgHeaders = {
       authorization: "Bearer " + localStorage.token,
     };
-    //设置富文本编辑器高度
+    // 设置富文本编辑器高度
     // this.editor.config.height = 600
-    //设置提示文字
+    // 设置提示文字
     this.editor.config.placeholder = "编辑文章内容";
 
     this.editor.create();
@@ -74,7 +74,7 @@ export default {
   watch: {
     form: {
       handler(val) {
-        //初始化富文本编辑器内容
+        // 初始化富文本编辑器内容
         this.editor.txt.html(val.content);
       },
       deep: true,

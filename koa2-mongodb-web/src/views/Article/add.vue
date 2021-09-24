@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     submit() {
-      //获取文章内容
+      //获取富文本编辑器里面的文章内容
       let content = this.editor.txt.html();
 
       let date = new Date();

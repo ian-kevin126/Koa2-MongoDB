@@ -4,7 +4,9 @@ let path = require("path");
 const router = require("koa-router")();
 router.prefix("/upload");
 
-//使用表单上传
+/**
+ * 使用表单上传
+ */
 var upload = multer({
   storage: multer.diskStorage({
     //设置文件存储位置
@@ -37,7 +39,9 @@ var upload = multer({
   }),
 });
 
-//上传图片
+/**
+ * 上传图片
+ */
 router.post("/img", upload.single("myfile"), async (ctx) => {
   let path = ctx.req.file.path;
   console.log("path", path);
@@ -47,7 +51,9 @@ router.post("/img", upload.single("myfile"), async (ctx) => {
   };
 });
 
-//富文本编辑器上传图片
+/**
+ * 富文本编辑器上传图片
+ */
 router.post("/editor/img", upload.single("editorFile"), async (ctx) => {
   let path = ctx.req.file.path;
   path = ctx.origin + "" + path.replace("public", "");

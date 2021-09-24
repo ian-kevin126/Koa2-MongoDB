@@ -46,6 +46,7 @@ export default {
     this.getData();
   },
   methods: {
+    // 获取文章数据
     getData() {
       this.$http({
         path: "/article/findAll",
@@ -61,6 +62,7 @@ export default {
         this.count = res.count;
       });
     },
+    // 编辑文章
     update(row) {
       this.$router.push({
         path: "/admin/article/update",
@@ -69,6 +71,7 @@ export default {
         },
       });
     },
+    // 删除文章
     del(row) {
       this.$confirm("确定要删除吗？", "提示", {
         confirmButtonText: "删除",
@@ -94,6 +97,7 @@ export default {
         })
         .catch(() => {});
     },
+    // 翻页
     changePage(page) {
       this.page = page;
       this.getData();

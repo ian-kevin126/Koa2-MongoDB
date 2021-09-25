@@ -16,11 +16,11 @@ const article = require("./routes/article");
 const comment = require("./routes/comment");
 const fans = require("./routes/fans");
 
-// 连接数据库
-MongoConnect();
-
 // error handler
 onerror(app);
+
+// 连接数据库
+MongoConnect();
 
 // middlewares
 app.use(
@@ -32,7 +32,7 @@ app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
 
-// 解决跨域问题，一定要在路由中间件签名
+// 解决跨域问题，一定要放在路由中间件之前
 app.use(cors());
 
 app.use(

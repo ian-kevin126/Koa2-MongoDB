@@ -1,15 +1,11 @@
 <template>
   <div>
-      点赞管理
+    点赞管理
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

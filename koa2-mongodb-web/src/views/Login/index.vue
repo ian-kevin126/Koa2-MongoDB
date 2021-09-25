@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-card>
-      <div class="login-title">简书后台管理系统</div>
+      <div class="login-title">后台管理系统</div>
       <el-form :model="form" status-icon :rules="rules" ref="ruleForm">
         <el-form-item prop="username">
           <el-input

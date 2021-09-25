@@ -7,13 +7,13 @@ export default (router) => {
   router.beforeEach((to, from, next) => {
     if (to.name === "ArticleList" || to.name === "Article") {
       //设置title
-      document.title = to.meta.title ? to.meta.title : "简书";
+      document.title = to.meta.title ? to.meta.title : "通用";
       next();
       return;
     }
 
     //设置title
-    document.title = to.meta.title ? to.meta.title : "简书后台管理系统";
+    document.title = to.meta.title ? to.meta.title : "后台管理系统";
 
     //校验是否存在token
     if (localStorage.token) {

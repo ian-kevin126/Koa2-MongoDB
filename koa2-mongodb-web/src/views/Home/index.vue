@@ -1,17 +1,19 @@
 <template>
   <el-container>
     <el-header>
-        <div class="sys-title">简书后台管理系统</div>
-        <div class="header-right">
-            <el-link :underline="false" @click="goWeb" style="margin-right:20px;">网站首页</el-link>
-            <el-avatar size="small" :src="$store.state.user.avatar"></el-avatar>
-            <el-link :underline="false">{{$store.state.user.username}}</el-link>
-            <el-link :underline="false" @click="exit">退出</el-link>
-        </div>
+      <div class="sys-title">WEB后台管理系统</div>
+      <div class="header-right">
+        <el-link :underline="false" @click="goWeb" style="margin-right:20px;"
+          >网站首页</el-link
+        >
+        <el-avatar size="small" :src="$store.state.user.avatar"></el-avatar>
+        <el-link :underline="false">{{ $store.state.user.username }}</el-link>
+        <el-link :underline="false" @click="exit">退出</el-link>
+      </div>
     </el-header>
     <el-container>
       <el-aside width="200px">
-          <el-menu
+        <el-menu
           :default-active="$route.path"
           class="el-menu-vertical-demo"
           background-color="#545c64"
@@ -78,7 +80,7 @@ export default {
         path: "/",
       });
     },
-  }
+  },
 };
 </script>
 

@@ -14,6 +14,7 @@ const users = require("./routes/users");
 const upload = require("./routes/upload");
 const article = require("./routes/article");
 const comment = require("./routes/comment");
+const fans = require("./routes/fans");
 
 // 连接数据库
 MongoConnect();
@@ -63,6 +64,7 @@ app.use(users.routes(), users.allowedMethods());
 app.use(upload.routes(), upload.allowedMethods());
 app.use(article.routes(), article.allowedMethods());
 app.use(comment.routes(), comment.allowedMethods());
+app.use(fans.routes(), fans.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {
